@@ -26,12 +26,12 @@ const unsigned long kMajorVersion   = 0;
 /**
  * @brief Minor version
  */
-const unsigned long kMinorVersion   = 0;
+const unsigned long kMinorVersion   = 1;
 
 /**
  * @brief Source version
  */
-const unsigned long kSourceVersion  = 1;
+const unsigned long kSourceVersion  = 0;
 
 
 /* End of namespace App */
