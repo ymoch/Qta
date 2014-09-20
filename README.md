@@ -1,5 +1,5 @@
-Qta
-====
+Qta *<small>- Quick Time-measurement Assistant</small>*
+=======================================
 
 Abstract
 ---------
@@ -14,4 +14,11 @@ Features
 * Any numbers of timers available.
 * Able to inherit time from the time that worked last.
   - This releases you from your bother such like "Oops, I forgot to change the timer!"
+
+Requirements
+-------------
+
+* Qt (http://qt-project.org/)
+  - Version >= 5.3
+  - Older versions are probably OK, but not supported.
 
