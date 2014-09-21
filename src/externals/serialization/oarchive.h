@@ -163,7 +163,7 @@ inline void OArchive::SaveSizedContainer(const Container<T, Allocator>& containe
 }
 
 template <typename Key, typename T, typename Comp, typename Allocator, template <typename U1, typename U2, typename U3, typename U4> class Container>
-inline void OArchive::SaveMapContainer(const Container<Key, T, Comp, Allocator>& a)
+inline void OArchive::SaveMapContainer(const Container<Key, T, Comp, Allocator>& values)
 {
     Save(values.size());
     for (auto it = values.cbegin(); it != values.cend(); ++it) {

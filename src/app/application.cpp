@@ -7,6 +7,7 @@
  */
 
 #include <fstream>
+#include <sstream>
 #include "../core/api/timer_table_config.h"
 #include "../gui/common.h"
 #include "version.h"
@@ -22,11 +23,24 @@ namespace App
  * Defenitions of local constant values
  *============================================================================*/
 
-static const char* const kConfigFileName = "settings.dat";
+static const char* const kWindowTitle = "Qta";
+static const char* const kConfigFileName = "qta_settings.dat";
+static const char* const kTimerTableFileName = "qta_timer_table.dat";
+static const char* const kReportFileName = "qta_report.txt";
 
 /*==============================================================================
  * Defenitions of local functions
  *============================================================================*/
+
+static const char* CreateWindowTitle()
+{
+    std::ostringstream os;
+    os << kWindowTitle << " ver."
+       << kMajorVersion << '.'
+       << kMinorVersion << '.'
+       << kSourceVersion;
+    return os.str().c_str();
+}
 
 /**
  * @brief Create the erial version
@@ -49,8 +63,8 @@ Application::Application(int argc, char** argv)
     , timer_table_()
     , config_()
 {
-    timer_table_.Config()->SetSaveFileName("timer_table.sav");
-    timer_table_.Config()->SetReportFileName("report.txt");
+    timer_table_.Config()->SetSaveFileName(kTimerTableFileName);
+    timer_table_.Config()->SetReportFileName(kReportFileName);
 }
 
 int Application::exec()
@@ -58,7 +72,7 @@ int Application::exec()
     Initialize();
 
     Gui::MainDialog dialog(0, Config(), &timer_table_);
-    dialog.setWindowTitle("Qta");
+    dialog.setWindowTitle(CreateWindowTitle());
     dialog.show();
     const int rc = app_.exec();
 

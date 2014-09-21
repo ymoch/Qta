@@ -59,7 +59,10 @@ private:
  * Declarations of types
  *============================================================================*/
 
-template <> void Serialization::IArchive::Load(IdMaker::IdMaker& id_maker);
-template <> void Serialization::OArchive::Save(const IdMaker::IdMaker& id_maker);
+namespace Serialization
+{
+template <> void IArchive::Load(IdMaker::IdMaker& id_maker);
+template <> void OArchive::Save(const IdMaker::IdMaker& id_maker);
+}
 
 #endif // ID_MAKER_ID_MAKER_H

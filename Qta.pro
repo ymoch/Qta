@@ -17,6 +17,11 @@ CONFIG += \
 QMAKE_CFLAGS_WARN_ON
 QMAKE_CXXFLAGS_WARN_ON
 
+QMAKE_CFLAGS_RELEASE -= -O2
+QMAKE_CFLAGS_RELEASE += -O3
+QMAKE_CXXFLAGS_RELEASE -= -O2
+QMAKE_CXXFLAGS_RELEASE += -O3
+
 SOURCES += \
     src/app/main.cpp \
     src/app/application.cpp \
@@ -70,11 +75,6 @@ FORMS += \
     src/gui/control_inherit_time_dialog.ui \
     src/gui/control_edit_time_dialog.ui \
     src/gui/timer_edit_dialog.ui \
-
-QMAKE_CFLAGS_RELEASE -= -O2
-QMAKE_CFLAGS_RELEASE += -O3
-QMAKE_CXXFLAGS_RELEASE -= -O2
-QMAKE_CXXFLAGS_RELEASE += -O3
 
 Release:DESTDIR = release
 Debug:DESTDIR   = debug

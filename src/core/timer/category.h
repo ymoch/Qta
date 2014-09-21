@@ -93,7 +93,10 @@ private:
  * Declarations of types
  *============================================================================*/
 
-template <> void Serialization::IArchive::Load(Qta::Core::Category&);
-template <> void Serialization::OArchive::Save(const Qta::Core::Category&);
+namespace Serialization
+{
+template <> void IArchive::Load(Qta::Core::Category&);
+template <> void OArchive::Save(const Qta::Core::Category&);
+}
 
 #endif // QTA_CORE_TIMER_CATEGORY_H

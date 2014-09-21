@@ -132,7 +132,10 @@ private:
  * Declarations of types
  *============================================================================*/
 
-template <> void Serialization::IArchive::Load(Qta::Core::TimerItem&);
-template <> void Serialization::OArchive::Save(const Qta::Core::TimerItem&);
+namespace Serialization
+{
+template <> void IArchive::Load(Qta::Core::TimerItem&);
+template <> void OArchive::Save(const Qta::Core::TimerItem&);
+}
 
 #endif // QTA_CORE_TIMER_TIMER_ITEM_H
