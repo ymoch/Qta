@@ -64,7 +64,10 @@ private:
  * Declarations of serialization
  *============================================================================*/
 
-template <> void Serialization::IArchive::Load(Qta::App::ApplicationConfig& conf);
-template <> void Serialization::OArchive::Save(const Qta::App::ApplicationConfig& conf);
+namespace Serialization
+{
+template <> void IArchive::Load(Qta::App::ApplicationConfig& conf);
+template <> void OArchive::Save(const Qta::App::ApplicationConfig& conf);
+}
 
 #endif // QTA_APP_APPLICATION_CONFIG_H

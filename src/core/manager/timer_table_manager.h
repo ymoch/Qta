@@ -210,8 +210,11 @@ private:
  * Declarations of types
  *============================================================================*/
 
+namespace Serialization
+{
 template <> void Serialization::IArchive::Load(Qta::Core::TimerTableManager& model);
 template <> void Serialization::OArchive::Save(const Qta::Core::TimerTableManager& model);
+}
 
 #endif // QTA_CORE_MANAGER_TABLE_MANAGER_H
 

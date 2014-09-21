@@ -72,8 +72,10 @@ private:
  * Declarations of serialization
  *============================================================================*/
 
-template <> void Serialization::IArchive::Load(Qta::Gui::GuiConfig& conf);
-template <> void Serialization::OArchive::Save(const Qta::Gui::GuiConfig& conf);
-
+namespace Serialization
+{
+template <> void IArchive::Load(Qta::Gui::GuiConfig& conf);
+template <> void OArchive::Save(const Qta::Gui::GuiConfig& conf);
+}
 
 #endif // QTA_GUI_GUI_CONFIG_H

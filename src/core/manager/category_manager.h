@@ -67,7 +67,7 @@ public:
      *
      * @return  size of categories
      */
-    const CategoriesSizeType GetSize() const { return categories_.size(); }
+    CategoriesSizeType GetSize() const { return categories_.size(); }
 
     /**
      * @brief   Add a category
@@ -141,7 +141,10 @@ private:
  * Declarations of types
  *============================================================================*/
 
+namespace Serialization
+{
 template <> void Serialization::IArchive::Load(Qta::Core::CategoryManager&);
 template <> void Serialization::OArchive::Save(const Qta::Core::CategoryManager&);
+}
 
 #endif // QTA_CORE_MANAGER_CATEGORY_MANAGER_H

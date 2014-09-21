@@ -107,8 +107,10 @@ private:
  * Declarations of serialization
  *============================================================================*/
 
-template <> void Serialization::IArchive::Load(Qta::Core::Timer& timer);
-template <> void Serialization::OArchive::Save(const Qta::Core::Timer& timer);
-
+namespace Serialization
+{
+template <> void IArchive::Load(Qta::Core::Timer& timer);
+template <> void OArchive::Save(const Qta::Core::Timer& timer);
+}
 
 #endif // QTA_CORE_TIMER_TIMER_H
